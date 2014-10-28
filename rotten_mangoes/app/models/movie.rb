@@ -4,14 +4,14 @@ class Movie < ActiveRecord::Base
   validates :runtime_in_minutes, numericality: { only_integer: true }
 
   ## I've commented this out because I want to allow movies from the past to be in my db!!
-  validate :release_date_is_in_the_future
+  # validate :release_date_is_in_the_future
   
-  protected
+  # protected
   
-  def release_date_is_in_the_future
-    if release_date.present?
-      errors.add(:release_date, "should probably be in the future") if release_date < Date.today
-    end
-  end
+  # def release_date_is_in_the_future
+  #   if release_date.present?
+  #     errors.add(:release_date, "should probably be in the future") if release_date < Date.today
+  #   end
+  # end
 
 end
